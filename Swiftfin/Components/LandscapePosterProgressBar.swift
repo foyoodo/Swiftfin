@@ -48,8 +48,8 @@ struct LandscapePosterProgressBar: View {
                 }
                 .padding(.horizontal, 5 * paddingScale)
                 .padding(.bottom, 7 * paddingScale)
-                .onAppear {
-                    paddingScale = reader.size.width / 300
+                .onChange(of: reader.size) { newSize in
+                    paddingScale = newSize.width / 300
                 }
             }
         }

@@ -47,7 +47,7 @@ struct ImageView: View {
     }
 
     var body: some View {
-        if let currentSource = sources.first {
+        if let currentSource = sources.first(where: { $0.url != nil }) {
             LazyImage(url: currentSource.url) { state in
                 if state.isLoading {
                     _placeholder(currentSource)
