@@ -40,3 +40,52 @@ enum PlaybackSpeed: Double, CaseIterable, Displayable {
         }
     }
 }
+
+extension PlaybackSpeed {
+
+    var floatValue: Float {
+        Float(rawValue)
+    }
+
+    var increased: Self {
+        switch self {
+        case .quarter:
+            return .half
+        case .half:
+            return .threeQuarter
+        case .threeQuarter:
+            return .one
+        case .one:
+            return .oneQuarter
+        case .oneQuarter:
+            return .oneHalf
+        case .oneHalf:
+            return .oneThreeQuarter
+        case .oneThreeQuarter:
+            return .two
+        case .two:
+            return .two
+        }
+    }
+
+    var decreased: Self {
+        switch self {
+        case .quarter:
+            return .quarter
+        case .half:
+            return .quarter
+        case .threeQuarter:
+            return .half
+        case .one:
+            return .threeQuarter
+        case .oneQuarter:
+            return .one
+        case .oneHalf:
+            return .oneQuarter
+        case .oneThreeQuarter:
+            return .oneHalf
+        case .two:
+            return .oneThreeQuarter
+        }
+    }
+}

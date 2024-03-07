@@ -193,7 +193,8 @@ struct VideoPlayer: View {
             .videoPlayerKeyCommands(
                 gestureStateHandler: gestureStateHandler,
                 videoPlayerManager: videoPlayerManager,
-                updateViewProxy: updateViewProxy
+                updateViewProxy: updateViewProxy,
+                jumpAction: jumpAction
             )
     }
 
